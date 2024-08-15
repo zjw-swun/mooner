@@ -33,6 +33,8 @@ target_link_libraries(mooner_core xunwind::xunwind)
 
 target_link_libraries(mooner_core shadowhook::shadowhook)
 
+target_link_options(mooner_core PRIVATE "-Wl,-z,max-page-size=16384")
+
 find_library(
         log-lib
 

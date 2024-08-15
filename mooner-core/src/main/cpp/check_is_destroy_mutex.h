@@ -12,7 +12,7 @@ struct PIMutex {
 };
 
 
-#if defined(__LP64__)
+/*#if defined(__LP64__)*/
 struct pthread_mutex_internal_t {
     _Atomic(uint16_t) state;
     uint16_t __pad;
@@ -30,6 +30,7 @@ struct pthread_mutex_internal_t {
     }
 } __attribute__((aligned(4)));
 
+/*
 
 #else
 struct pthread_mutex_internal_t {
@@ -50,3 +51,4 @@ struct pthread_mutex_internal_t {
 
 
 #endif
+*/

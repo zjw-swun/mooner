@@ -10,6 +10,7 @@ android {
     packagingOptions {
         exclude '**/libbytehook.so'
         exclude '**/libshadowhook.so'
+        exclude '**/libxunwind.so'
     }
 
     defaultConfig {
@@ -56,8 +57,12 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.5.0'
-    implementation 'com.bytedance:bytehook:1.0.6'
+
+   /* implementation 'com.bytedance:bytehook:1.0.6'
     implementation 'com.bytedance.android:shadowhook:1.0.6'
-    implementation 'io.github.hexhacking:xunwind:2.0.0'
+    implementation 'io.github.hexhacking:xunwind:2.0.0'*/
+
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    implementation 'io.github.hexhacking:xdl:2.2.0'
 
 }
