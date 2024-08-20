@@ -59,6 +59,12 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         init {
+            Mooner.catchSoCrash("libmooner.so", 11){
+                Log.e("mooner", "catchSoCrash exception")
+            }
+           /* Mooner.initPreventPthreadCrash("libmooner_core.so", 6){
+                Log.e("mooner", "catchSoCrash exception")
+            }*/
             System.loadLibrary("mooner")
         }
     }

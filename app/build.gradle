@@ -46,6 +46,9 @@ android {
 
 dependencies {
 
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    implementation 'io.github.hexhacking:xdl:2.2.0'
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.5.0'

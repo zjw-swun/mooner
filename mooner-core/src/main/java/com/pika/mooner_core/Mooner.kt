@@ -51,6 +51,15 @@ object Mooner {
         }
     }
 
+    fun catchSoCrash(soName: String,signal: Int, invoker:()->Unit) {
+        this.invoker = invoker
+        if (hasInit) {
+            catchSoCrash(soName, signal)
+        } else {
+            Log.e(TAG, "init fail")
+        }
+    }
+
 
     @JvmStatic
     fun onError() {
@@ -78,6 +87,9 @@ object Mooner {
 
 
     private external fun preventPthreadCrash(soName: String, signal: Int)
+
+    private external fun catchSoCrash(soName: String, signal: Int)
+
 
     private external fun memorySponge()
 
